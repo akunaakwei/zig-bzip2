@@ -1,0 +1,17 @@
+.{
+    .name = .bzip2,
+    .version = "1.0.8",
+    .minimum_zig_version = "0.15.1",
+    .dependencies = .{
+        .bzip2 = .{
+            .url = "https://gitlab.com/bzip2/bzip2/-/archive/bzip2-1.0.8/bzip2-bzip2-1.0.8.tar.gz",
+            .hash = "N-V-__8AANChDwAITDmkzIqB-9m_iaOXSquhghM2-AqDFcX8",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "LICENSE",
+    },
+    .fingerprint = 0x81bc4b11eee251c7,
+}
