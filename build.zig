@@ -19,7 +19,7 @@ pub fn build(b: *std.Build) void {
         }),
         .linkage = linkage,
     });
-    bz2.addCSourceFiles(.{
+    bz2.root_module.addCSourceFiles(.{
         .root = bzip2_dep.path("."),
         .files = &bz2_sources,
         .flags = &flags,
@@ -35,8 +35,8 @@ pub fn build(b: *std.Build) void {
             .link_libc = true,
         }),
     });
-    bzip2.linkLibrary(bz2);
-    bzip2.addCSourceFile(.{
+    bzip2.root_module.linkLibrary(bz2);
+    bzip2.root_module.addCSourceFile(.{
         .file = bzip2_dep.path("bzip2.c"),
         .flags = &flags,
     });
@@ -50,8 +50,8 @@ pub fn build(b: *std.Build) void {
             .link_libc = true,
         }),
     });
-    bzip2recover.linkLibrary(bz2);
-    bzip2recover.addCSourceFile(.{
+    bzip2recover.root_module.linkLibrary(bz2);
+    bzip2recover.root_module.addCSourceFile(.{
         .file = bzip2_dep.path("bzip2recover.c"),
         .flags = &flags,
     });
